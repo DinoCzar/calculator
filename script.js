@@ -24,14 +24,13 @@ const operator = function (firstNumber, operator, secondNumber) {
     } else if (operator === '/') {
         return divide(firstNumber, secondNumber);
     } else {
-        return alert("Please enter a valid operation");
+        return alert('Please enter a valid operation');
     }
 }
 
 const display = document.querySelector('#display');
 const displayContent = document.createElement('div');
 displayContent.setAttribute('id', 'displayContent');
-displayContent.textContent = 0;
 display.appendChild(displayContent);
 
 const left = document.querySelector('#left');
@@ -49,7 +48,7 @@ const clear = document.createElement('button');
 clear.setAttribute('id', 'numbers');
 clear.textContent = 'C';
 clear.addEventListener('click', () => {
-displayContent.textContent = 'clear';
+displayContent.textContent = '';
 });
 left.appendChild(clear);
 
@@ -99,7 +98,7 @@ for (let i = 1; i < 10; i++) {
     numbers.setAttribute('id', 'numbers');
     numbers.textContent = [i];
     numbers.addEventListener('click', () => {
-    displayContent.textContent = i;
+    displayContent.textContent += i;
     });
     left.appendChild(numbers);
 }
