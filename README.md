@@ -1,0 +1,1 @@
+I will create a calculator with this project to demonstrate my skills with HTML, CSS, and JavaScript.
