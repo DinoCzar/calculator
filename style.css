@@ -31,17 +31,18 @@
 
 #left, #right {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
 }
 
 #left {
     flex: 3;
+    flex-wrap: wrap-reverse;
 }
 
 #right {
     flex: 1;
+    flex-wrap: wrap;
 }
 
 #numbers {
