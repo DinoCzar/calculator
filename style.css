@@ -30,40 +30,7 @@
     margin-top: 0px;
     display: flex;
     flex: 1;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     align-content: space-around;
 }
-
-
-
-
-/*
-
-#left, #right {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-#left {
-    flex: 3;
-    flex-wrap: wrap-reverse;
-}
-
-#right {
-    flex: 1;
-    flex-wrap: wrap;
-}
-
-#numbers {
-    background-color: white;
-    margin: 5px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-*/
