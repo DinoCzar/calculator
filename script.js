@@ -33,6 +33,19 @@ const displayContent = document.createElement('div');
 displayContent.setAttribute('id', 'displayContent');
 display.appendChild(displayContent);
 
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => button.addEventListener('click', () => calculate(button)));
+
+function calculate(button) {
+    const displayValue = displayContent.textContent += button.id;
+    console.log(displayValue);
+}
+
+
+
+/*
+
 const left = document.querySelector('#left');
 const right = document.querySelector('#right');
 
@@ -103,3 +116,4 @@ for (let i = 1; i < 10; i++) {
     left.appendChild(numbers);
 }
 
+*/

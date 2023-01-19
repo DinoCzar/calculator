@@ -31,8 +31,14 @@
     display: flex;
     flex: 1;
     justify-content: center;
-    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
 }
+
+
+
+
+/*
 
 #left, #right {
     display: flex;
@@ -59,3 +65,5 @@
     align-items: center;
     justify-content: center;
 }
+
+*/
