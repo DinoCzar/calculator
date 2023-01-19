@@ -23,8 +23,6 @@ const operation = function (firstNumber, operator, secondNumber) {
         return multiply(firstNumber, secondNumber);
     } else if (operator === '/') {
         return divide(firstNumber, secondNumber);
-    } else {
-        return alert('Please enter a valid operation');
     }
 }
 
@@ -38,24 +36,19 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => button.addEventListener('click', () => calculate(button)));
 
 function calculate(button) {
-    var operator = '+';
-    var secondNumber = 4;
     displayContent.textContent = (displayContent.textContent += button.textContent);
+    displayValue = displayContent.textContent;
     if (button.textContent === '+') {
-        var firstNumber = Number(displayContent.textContent.slice(0,-1));
-        operator = button.textContent;
+        var firstNumber = Number(displayValue.slice(0,-1));
+        var operator = '+';
     }
 
-    console.log(firstNumber);
-    console.log(operator);
+    var secondNumber = displayValue.substring(displayValue2.indexOf('+') + 1).slice(0,-1);
     console.log(secondNumber);
-
-
+    
     const equals = document.querySelector('#equals');
     equals.addEventListener('click', () => {
     displayContent.textContent = operation(firstNumber, operator, secondNumber);
 })
 }
-
-
 
