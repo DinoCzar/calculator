@@ -24,7 +24,7 @@ const operation = function (firstNumber, operator, secondNumber) {
     } else if (operator === '/') {
         return divide(firstNumber, secondNumber);
     }
-}
+};
 
 const display = document.querySelector('#display');
 const displayContent = document.createElement('div');
@@ -32,10 +32,10 @@ displayContent.setAttribute('id', 'displayContent');
 display.appendChild(displayContent);
 
 const buttons = document.querySelectorAll('button');
-
 buttons.forEach((button) => button.addEventListener('click', () => calculate(button)));
 
 function calculate(button) {
+
     displayContent.textContent = (displayContent.textContent += button.textContent);
     displayValue = displayContent.textContent;
 
