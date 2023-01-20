@@ -38,17 +38,15 @@ buttons.forEach((button) => button.addEventListener('click', () => calculate(but
 function calculate(button) {
     displayContent.textContent = (displayContent.textContent += button.textContent);
     displayValue = displayContent.textContent;
-    if (button.textContent === '+') {
-        var firstNumber = Number(displayValue.slice(0,-1));
+
+    if (button.textContent === '=') {
+        var firstNumber = Number(displayValue.substring(0, (displayValue.indexOf('+'))));
         var operator = '+';
+        var secondNumber = Number(displayValue.substring(displayValue.indexOf('+') + 1).slice(0,-1));
+        console.log(displayValue)
+        console.log(firstNumber)
+        console.log(operator)
+        console.log(secondNumber)
+        displayContent.textContent = operation(firstNumber, operator, secondNumber);
     }
-
-    var secondNumber = displayValue.substring(displayValue2.indexOf('+') + 1).slice(0,-1);
-    console.log(secondNumber);
-    
-    const equals = document.querySelector('#equals');
-    equals.addEventListener('click', () => {
-    displayContent.textContent = operation(firstNumber, operator, secondNumber);
-})
-}
-
+};
