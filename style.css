@@ -1,14 +1,15 @@
 .container {
     display: flex;
     justify-content: center;
-    margin: 100px;
+    margin: 50px;
 }
 
 .border {
-    background-color: lightgray;
+    background-color: #2c5d63;
     border: solid;
-    border-color: black;
-    width: 300px;
+    border-color: #283739;
+    border-width: 2px;
+    width: 230px;
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -18,9 +19,9 @@
 #display {
     height: 50px;
     width: 200px;
-    background-color: gray;
+    background-color: #a2c11c;
     border: solid;
-    border-color: black;
+    border-color: #283739;
     display: flex;
     align-items: center;
     justify-content: right;
@@ -30,7 +31,7 @@
 }
 
 #displayContent {
-    color: white;
+    color: #283739;
     padding-right: 10px;
     padding-left: 10px;
     font-size: 24px;
@@ -44,7 +45,7 @@
 #bottom {
     background-color: grey;
     border: solid;
-    border-color: black;
+    border-color: #283739;
     width: 200px;
     height: 200px;
     margin: 10px;
@@ -59,7 +60,9 @@ button {
    width: 40px;
    height: 40px;
    border: solid;
-   border-color: black;
+   border-color: #283739;
+   color: #283739;
    font-size: 16px;
    margin: 5px;
+   background-color: #e0e0e0;
 }
