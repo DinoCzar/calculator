@@ -40,13 +40,23 @@ function calculate(button) {
     displayValue = displayContent.textContent;
 
     if (button.textContent === '=') {
-        var firstNumber = Number(displayValue.substring(0, (displayValue.indexOf('+'))));
-        var operator = '+';
-        var secondNumber = Number(displayValue.substring(displayValue.indexOf('+') + 1).slice(0,-1));
-        console.log(displayValue)
-        console.log(firstNumber)
-        console.log(operator)
-        console.log(secondNumber)
+
+        if(displayValue.includes('+')) {
+            var operator = '+';
+        } else if (displayValue.includes('-')) {
+            var operator = '-';
+        } else if (displayValue.includes('*')) {
+            var operator = '*';
+        } else if (displayValue.includes('/')) {
+            var operator = '/';
+        };
+
+        var firstNumber = Number(displayValue.substring(0, (displayValue.indexOf(operator))));
+        var secondNumber = Number(displayValue.substring(displayValue.indexOf(operator) + 1).slice(0,-1));
         displayContent.textContent = operation(firstNumber, operator, secondNumber);
-    }
+    };
+
+    if (button.textContent === 'C') {
+        displayContent.textContent = '';
+    };
 };
