@@ -15,7 +15,9 @@ const divide = function (a, b) {
 };
 
 const operation = function (firstNumber, operator, secondNumber) {
-    if (operator === '+') {
+    if ((operator === '/') && (secondNumber === 0)) {
+        return 'Not so fast';
+    } else if (operator === '+') {
         return add(firstNumber, secondNumber);
     } else if (operator === '-') {
         return subtract(firstNumber, secondNumber);
