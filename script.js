@@ -9,7 +9,7 @@ let numbers = document.querySelectorAll('.number');
 let operators = document.querySelectorAll('.operator');
 
 let previousOperator = '';
-let previousValue = '';
+let previousValue = 0;
 let currentValue = '';
 
 numbers.forEach((number) => number.addEventListener('click', function(e) {
@@ -27,11 +27,6 @@ function handleNumber(number) {
 };
 
 function operation(currentOperator) {
-    if (previousValue === '') {
-        previousValue = 0;
-    } else {
-        Number(previousValue);
-    };
 
     if (previousOperator === '') {
         previousOperator = '+';
@@ -54,11 +49,6 @@ function operation(currentOperator) {
 };
 
 equals.addEventListener('click', function() {
-    if (previousValue === '') {
-        previousValue = 0;
-    } else {
-        Number(previousValue);
-    };
 
     if (previousOperator === '') {
         previousOperator = '+';
