@@ -69,7 +69,9 @@ clear.addEventListener('click', function() {
 });
 
 function calculate(firstNumber, operator, secondNumber) {
-    if (operator === '+') {
+    if ((operator === '/') && (secondNumber === 0)) {
+        return 'Not so fast...';
+    } else if (operator === '+') {
         return firstNumber + secondNumber;
     } else if (operator === '-') {
         return firstNumber - secondNumber;
