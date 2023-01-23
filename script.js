@@ -1,3 +1,105 @@
+const display = document.querySelector('#display');
+const displayContent = document.createElement('div');
+displayContent.setAttribute('id', 'displayContent');
+display.appendChild(displayContent);
+
+let clear = document.querySelector('#clear');
+let equals = document.querySelector('#equals');
+
+let numbers = document.querySelectorAll('.number');
+let operators = document.querySelectorAll('.operator');
+
+let previousOperator = '';
+let previousValue = '';
+let currentValue = '';
+
+numbers.forEach((number) => number.addEventListener('click', function(e) {
+    handleNumber(e.target.textContent)
+    displayContent.textContent = currentValue;
+}));
+
+operators.forEach((op) => op.addEventListener('click', function(e) {
+    handleOperator(e.target.textContent);
+    displayContent.textContent = previousValue;
+}))
+
+function handleNumber(num) {
+    currentValue += num;
+}
+
+function handleOperator(op) {
+    if (previousValue === '') {
+        previousValue = 0;
+    } else {
+        Number(previousValue);
+    };
+
+    if (previousOperator === '') {
+        previousOperator = '+';
+    };
+
+    currentValue = Number(currentValue);
+
+console.log('previous value: ' + previousValue)
+console.log('current value: ' + currentValue)
+
+    if (previousOperator === '+') {
+        previousValue += currentValue;
+    } else if (previousOperator === '-') {
+        previousValue -= currentValue;
+    } else if (previousOperator === 'x') {
+        previousValue *= currentValue;
+    } else {
+        previousValue /= currentValue;
+    }
+
+    currentValue = '';
+console.log('previous value: ' + previousValue)
+console.log('current value: ' + currentValue)
+console.log('previous operator: ' + previousOperator)
+
+    previousOperator = op;
+
+    console.log('previous operator: ' + previousOperator)
+
+
+}
+
+clear.addEventListener('click', function() {
+    previousValue = '';
+    currentValue = '';
+    operator = '';
+    displayContent.textContent = currentValue;
+});
+
+equals.addEventListener('click', function() {
+    calculate()
+    displayContent.textContent = previousValue;
+})
+
+function calculate() {
+    previousValue = Number(previousValue);
+    currentValue = Number(currentValue);
+
+    if (operator === '+') {
+        previousValue += currentValue;
+    } else if (operator === '-') {
+        previousValue -= currentValue;
+    } else if (operator === 'x') {
+        previousValue *= currentValue;
+    } else {
+        previousValue /= currentValue;
+    }
+
+    previousValue = previousValue.toString();
+    currentValue = currentValue.toString();
+}
+
+
+
+
+/*
+
 const add = function (a, b) {
     return a + b;
 };
@@ -62,3 +164,5 @@ function calculate(button) {
         displayContent.textContent = '';
     };
 };
+
+*/
