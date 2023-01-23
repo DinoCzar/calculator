@@ -45,7 +45,7 @@ function operation(currentOperator) {
         previousValue -= currentValue;
     } else if (previousOperator === 'x') {
         previousValue *= currentValue;
-    } else {
+    } else if (previousOperator === '/') {
         previousValue /= currentValue;
     }
 
@@ -72,7 +72,7 @@ equals.addEventListener('click', function() {
         previousValue -= currentValue;
     } else if (previousOperator === 'x') {
         previousValue *= currentValue;
-    } else {
+    } else if (previousOperator === '/') {
         previousValue /= currentValue;
     }
 
