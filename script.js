@@ -9,7 +9,7 @@ let numbers = document.querySelectorAll('.number');
 let operators = document.querySelectorAll('.operator');
 
 let previousOperator = '';
-let previousValue = 0;
+let previousValue = '';
 let currentValue = '';
 
 numbers.forEach((number) => number.addEventListener('click', function(e) {
@@ -49,13 +49,16 @@ function operation(currentOperator) {
 };
 
 equals.addEventListener('click', function() {
-    currentValue = Number(currentValue);
-    result = calculate(previousValue, previousOperator, currentValue);
-    console.log(result)
-    previousValue = result;
-    displayContent.textContent = previousValue;
-    currentValue = '';
-    previousOperator = '';
+    if (previousValue === '') {
+        displayContent.textContent = 'Error';
+    } else {
+        currentValue = Number(currentValue);
+        result = calculate(previousValue, previousOperator, currentValue);
+        previousValue = result;
+        displayContent.textContent = previousValue;
+        currentValue = '';
+        previousOperator = '';
+    };
 });
 
 clear.addEventListener('click', function() {
