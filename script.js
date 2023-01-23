@@ -31,7 +31,7 @@ function operation(currentOperator) {
     if (previousOperator === '') {
         previousOperator = '+';
     };
-
+    previousValue = Number(previousValue);
     currentValue = Number(currentValue);
 
     if (previousOperator === '+') {
@@ -49,25 +49,13 @@ function operation(currentOperator) {
 };
 
 equals.addEventListener('click', function() {
-
-    if (previousOperator === '') {
-        previousOperator = '+';
-    };
-
     currentValue = Number(currentValue);
-
-    if (previousOperator === '+') {
-        previousValue += currentValue;
-    } else if (previousOperator === '-') {
-        previousValue -= currentValue;
-    } else if (previousOperator === 'x') {
-        previousValue *= currentValue;
-    } else if (previousOperator === '/') {
-        previousValue /= currentValue;
-    }
-
-    currentValue = '';
+    result = calculate(previousValue, previousOperator, currentValue);
+    console.log(result)
+    previousValue = result;
     displayContent.textContent = previousValue;
+    currentValue = '';
+    previousOperator = '';
 });
 
 clear.addEventListener('click', function() {
@@ -76,3 +64,15 @@ clear.addEventListener('click', function() {
     operator = '';
     displayContent.textContent = currentValue;
 });
+
+function calculate(firstNumber, operator, secondNumber) {
+    if (operator === '+') {
+        return firstNumber + secondNumber;
+    } else if (operator === '-') {
+        return firstNumber - secondNumber;
+    } else if (operator === 'x') {
+        return firstNumber * secondNumber;
+    } else if (operator === '/') {
+        return firstNumber / secondNumber;
+    }
+};
